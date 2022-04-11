@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./components/login/login";
+import SignUp from "./components/signup/signup";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Welcome from "./components/welcome/welcome";
+import { connect } from "react-redux";
+import { computeHeadingLevel } from "@testing-library/react";
 
-function App() {
+const mapStateToProps = (state) => {
+  console.log('hello',state)
+  return {
+    userDetails: state.userDetails,
+    isAuth:state.isAuth
+  };
+};
+
+let App=(props)=> {
+
+  if (props.isAuth) {
+    return <Welcome/>;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/"  element={<Login />} />
+          <Route path="/signup" strict element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

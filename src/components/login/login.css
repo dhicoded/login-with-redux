@@ -1,0 +1,89 @@
+*{
+ /*   border:red solid 1px;*/
+    margin:0;
+    padding:0;
+}
+
+.wrapper{
+    display:flex;
+    height:100vh;  
+    font-family: "Times New Roman", Georgia, "Book Antiqua", serif;
+}
+
+.login-wrapper{
+    text-align: center;
+}
+
+.left-content{
+    flex:1;
+    height:100%;
+    margin:auto;
+}
+
+.form-wrapper{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    width:100%
+}
+
+.subwelcome{
+    color:darkgrey;
+}
+
+.useremail, .userpassword{
+    border-radius:30px;
+}
+
+
+.email, .pwd{
+    margin-top:10px;
+    
+}
+
+.email>input,.pwd>input{
+    height:25px;
+}
+.subchecks{
+    display:flex;
+    width:50%;
+    justify-content:space-between;
+}
+
+.signin{
+    background-color: purple;
+    width:40%;
+    height:30px;
+    border-radius: 10%;
+    color:white;
+}
+
+.googlesignin{
+    background-color:white;
+    width:40%;
+    height:30px;
+    border-radius: 10%;
+    color:black;
+}
+
+.rightcontent{
+    flex:1;
+    background-color: lightgrey;
+}
+
+.rightcontent div{
+    display:flex;
+    flex:1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+}
+
+.rightcontent img{
+    width:200px;
+    height:200px;
+}
